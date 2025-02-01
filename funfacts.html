@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts - Girly Pop Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">✨ Girly Pop Hub ✨</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Historical Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="funfacts.html">Fun Facts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/ilovemenwithoutthen" target="_blank">GitHub Repo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1>💖 Fabulous Fun Facts About December 3rd 💖</h1>
+        <p>Click a button to reveal a dazzling fun fact! ✨</p>
+        <div class="btn-group" role="group">
+            <button class="btn btn-primary funfact-button" data-fact="1">🎀 Fact 1</button>
+            <button class="btn btn-primary funfact-button" data-fact="2">💅 Fact 2</button>
+            <button class="btn btn-primary funfact-button" data-fact="3">🌸 Fact 3</button>
+            <button class="btn btn-primary funfact-button" data-fact="4">🎉 Fact 4</button>
+            <button class="btn btn-primary funfact-button" data-fact="5">💎 Fact 5</button>
+        </div>
+        <div id="funfact-display" class="mt-4">
+            <h2 id="funfact-title">🎀 Click a Button 🎀</h2>
+            <p id="funfact-description">Your fun fact will appear here! ✨</p>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 p-3 text-light">
+        <p>Made with 💕 by <a href="https://github.com/ilovemenwithoutthen" target="_blank" style="color: white;">GitHub Repository</a></p>
+    </footer>
+
+    <script>
+        const funFacts = {
+            "1": "December 3rd is the 337th day of the year (338th in leap years)! 📆",
+            "2": "On December 3, 1967, the first successful human heart transplant was performed! 💖",
+            "3": "December 3rd is known as 'Make a Gift Day'—so spread the love! 🎁",
+            "4": "The world's first text message was sent on December 3, 1992, reading 'Merry Christmas'! 🎄",
+            "5": "Sagittarius season is in full swing on December 3rd, bringing fiery energy! 🔥♐"
+        };
+
+        document.querySelectorAll('.funfact-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const factNum = this.getAttribute('data-fact');
+                document.getElementById('funfact-title').textContent = "💡 Did You Know?";
+                document.getElementById('funfact-description').textContent = funFacts[factNum];
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
